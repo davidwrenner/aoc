@@ -3,11 +3,12 @@ import os
 
 # file I/O
 input_file = sys.argv[0][0:2] + ".txt"
+input_path = "../input/" + input_file
 
-if not os.path.exists(input_file):
-    sys.exit(f"Did not find expected file {input_file}")
+if not os.path.exists(input_path):
+    sys.exit(f"Did not find expected input {input_path}")
 
-with open(input_file, "r") as f:
+with open(input_path, "r") as f:
     input = [line.rstrip() for line in f if line != "\n"]
 
 ans = None
