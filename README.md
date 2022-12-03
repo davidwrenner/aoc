@@ -10,5 +10,5 @@ git clone https://github.com/davidwrenner/aoc-2022.git
 Run daily solution
 ```
 cd src
-python XX.py  # requires input/XX.txt
+python XX.py  # requires ../input/XX.txt
 ```
