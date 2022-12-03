@@ -18,7 +18,7 @@ def priority(char: str) -> int:
 
 def shared_item(sack: str) -> str:
     med = len(sack) // 2
-    first_half_items = set(sack[:med])
+    first_half_items = sack[:med]
     for item in sack[med:]:
         if item in first_half_items:
             return item
