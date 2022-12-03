@@ -7,8 +7,8 @@ Clone
 git clone https://github.com/davidwrenner/aoc-2022.git
 ```
 
-Run daily solution. Requires `input/<XX>.txt`.
+Run daily solution. Requires `input/XX.txt`.
 ```
 cd src
-python <XX>.py
+python XX.py
 ```
