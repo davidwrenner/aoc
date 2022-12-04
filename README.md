@@ -22,7 +22,7 @@ python XX.py  # requires ../input/XX.txt
 |12/1: [Calorie Counting](src/00.py)|
 |12/2: [Rock Paper Scissors](src/01.py) |
 |12/3: [Rucksack Reorganization](src/02.py) |
-|12/4: ??? |
+|12/4: [Camp Cleanup](src/03.py) |
 |12/5: ??? |
 |12/6: ??? |
 |12/7: ??? |
