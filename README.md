@@ -1,6 +1,6 @@
 # aoc-2022
 
-My solutions to Advent of Code 2022.
+My solutions to [Advent of Code 2022](https://adventofcode.com).
 
 ### Setup
 
@@ -23,7 +23,7 @@ python XX.py  # requires ../input/XX.txt
 |12/2: [Rock Paper Scissors](src/01.py) |
 |12/3: [Rucksack Reorganization](src/02.py) |
 |12/4: [Camp Cleanup](src/03.py) |
-|12/5: ??? |
+|12/5: [Supply Stacks](src/04.py) |
 |12/6: ??? |
 |12/7: ??? |
 |12/8: ??? |
