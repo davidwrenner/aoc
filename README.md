@@ -24,7 +24,7 @@ python XX.py  # requires ../input/XX.txt
 |12/3: [Rucksack Reorganization](src/02.py) |
 |12/4: [Camp Cleanup](src/03.py) |
 |12/5: [Supply Stacks](src/04.py) |
-|12/6: ??? |
+|12/6: [Tuning Trouble](src/05.py) |
 |12/7: ??? |
 |12/8: ??? |
 |12/9: ??? |
