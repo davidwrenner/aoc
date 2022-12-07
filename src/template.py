@@ -15,4 +15,4 @@ print("Answer A:", ans)
 # part b
 
 print("Answer B:", ans)
-sp.run("pbcopy", input=ans, text=True)
+sp.run("pbcopy", input=str(ans), text=True)
