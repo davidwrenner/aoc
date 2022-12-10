@@ -27,8 +27,8 @@ python XX.py  # requires ../input/XX.txt
 |12/6: [Tuning Trouble](src/05.py) |
 |12/7: [No Space Left On Device](src/06.py) |
 |12/8: [Treetop Tree House](src/07.py) |
-|12/9: ??? |
-|12/10: ??? |
+|12/9: [Rope Bridge](src/08.py) |
+|12/10: [Cathode-Ray Tube](src/09.py) |
 |12/11: ??? |
 |12/12: ??? |
 |12/13: ??? |
