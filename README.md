@@ -31,7 +31,7 @@ python XX.py  # requires ../input/XX.txt
 |12/10: [Cathode-Ray Tube](src/09.py) |⭐⭐|
 |12/11: Monkey in the Middle ||
 |12/12: [Hill Climbing Algorithm](src/11.py) |⭐⭐|
-|12/13: ??? ||
+|12/13: [Distress Signal](src/12.py) |⭐⭐|
 |12/14: ??? ||
 |12/15: ??? ||
 |12/16: ??? ||
