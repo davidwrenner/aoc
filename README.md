@@ -29,8 +29,8 @@ python XX.py  # requires ../input/XX.txt
 |12/8: [Treetop Tree House](src/07.py) |⭐⭐|
 |12/9: [Rope Bridge](src/08.py) |⭐|
 |12/10: [Cathode-Ray Tube](src/09.py) |⭐⭐|
-|12/11: ??? ||
-|12/12: ??? ||
+|12/11: Monkey in the Middle ||
+|12/12: [Hill Climbing Algorithm](src/11.py) |⭐⭐|
 |12/13: ??? ||
 |12/14: ??? ||
 |12/15: ??? ||
