@@ -29,11 +29,11 @@ python XX.py  # requires ../input/XX.txt
 |12/8: [Treetop Tree House](src/07.py) |⭐⭐|
 |12/9: [Rope Bridge](src/08.py) |⭐|
 |12/10: [Cathode-Ray Tube](src/09.py) |⭐⭐|
-|12/11: Monkey in the Middle ||
+|12/11: [Monkey in the Middle](src/10.py) |⭐|
 |12/12: [Hill Climbing Algorithm](src/11.py) |⭐⭐|
 |12/13: [Distress Signal](src/12.py) |⭐⭐|
 |12/14: [Regolith Reservoir](src/13.py) |⭐⭐|
-|12/15: ??? ||
+|12/15: [Beacon Exclusion Zone](src/14.py) ||
 |12/16: ??? ||
 |12/17: ??? ||
 |12/18: ??? ||
