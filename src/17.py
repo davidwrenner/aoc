@@ -44,7 +44,7 @@ max_point = (max(points, key=lambda p: p[0])[0]+1,
 
 
 def is_in_range(pt):
-    return False if any(pt[i] not in range(min_point[i], max_point[i]+1) for i in range(3)) else True
+    return not any(pt[i] not in range(min_point[i], max_point[i]+1) for i in range(3))
 
 
 # DFS all space accessible around lava, then count those next to a cube
