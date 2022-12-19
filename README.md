@@ -36,7 +36,7 @@ python XX.py  # requires ../input/XX.txt
 |12/15: [Beacon Exclusion Zone](src/14.py) ||
 |12/16: ??? ||
 |12/17: ??? ||
-|12/18: ??? ||
+|12/18: [Boiling Boulders](src/17.py)|⭐⭐|
 |12/19: ??? ||
 |12/20: ??? ||
 |12/21: ??? ||
