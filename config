@@ -1,1 +1,2 @@
-session_cookie="<REPLACE_WITH_SESSION_COOKIE>"
+# set the session cookie and uncomment the line below
+# session_cookie="<REPLACE_WITH_SESSION_COOKIE>"
