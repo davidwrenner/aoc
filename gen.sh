@@ -10,7 +10,7 @@ fi
 
 year=$(date +%Y)
 year_src="$year/src"
-cd "$year_src" || { echo "[FATAL] not configured for $year"; exit 2; }
+cd "$year_src" || { echo "[FATAL] not configured for $year"; exit 1; }
 
 # find the next unsolved puzzle
 day=1
@@ -19,7 +19,7 @@ while [ -e "$py" ]; do
     printf -v py '%02d.py' "$(( ++day ))"
 done
 if [ "$day" -gt "$num_days_of_aoc" ]; then
-    echo "[FATAL] day $day geq the number of aoc days $num_days_of_aoc"; exit 3
+    echo "[FATAL] day $day geq the number of aoc days $num_days_of_aoc"; exit 1
 fi
 printf -v txt '%02d.txt' $day
 
@@ -27,11 +27,11 @@ curl "https://adventofcode.com/$year/day/$day/input" \
     -X "GET" \
     -H "Cookie: session=$session_cookie" > "$txt"
 if [[ ! -f "$txt" ]]; then
-    echo "[FATAL] failed to curl input"; exit 4
+    echo "[FATAL] failed to curl input"; exit 1
 fi
 
 if mv "$txt" "../input/" && cp "template.py" "$py"; then
     echo "[INFO] generated $py and $txt"
 else
-    echo "[FATAL] something happened while generating $py and $txt"; exit 5
+    echo "[FATAL] something happened while generating $py and $txt"; exit 1
 fi
