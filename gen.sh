@@ -25,7 +25,7 @@ printf -v txt '%02d.txt' $day
 
 curl "https://adventofcode.com/$year/day/$day/input" \
     -X "GET" \
-    -H "Cookie: session=$session_cookie" >> "$txt"
+    -H "Cookie: session=$session_cookie" > "$txt"
 if [[ ! -f "$txt" ]]; then
     echo "[FATAL] failed to curl input"; exit 4
 fi
