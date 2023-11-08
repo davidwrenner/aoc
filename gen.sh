@@ -21,7 +21,7 @@ fi
 
 year=$(date +%Y)
 year_src="$year/src"
-cd "$year_src"|| fatal "repo not configured for $year"
+cd "$year_src" || fatal "repo not configured for $year"
 
 # find the next unsolved puzzle
 # this strategy allows for asynchronous completion of puzzles
@@ -31,7 +31,7 @@ while [ -e "$py" ]; do
     printf -v py '%02d.py' "$(( ++day ))"
 done
 if [ "$day" -gt "$num_days_of_aoc" ]; then
-    fatal "day $day geq the number of aoc days $num_days_of_aoc"
+    fatal "day $day > the number of aoc days $num_days_of_aoc"
 fi
 printf -v txt '%02d.txt' $day
 
