@@ -1,2 +1,3 @@
 # set the session cookie and uncomment the line below
 # session_cookie="<REPLACE_WITH_SESSION_COOKIE>"
+# user_agent="<REPLACE_WITH_CONTACT_INFO>"

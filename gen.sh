@@ -15,12 +15,16 @@ source "config"
 if [[ -z "$session_cookie" ]]; then
     fatal "session_cookie not set"
 fi
+if [[ -z "$user_agent" ]]; then
+    fatal "user_agent not set"
+fi
 
 year=$(date +%Y)
 year_src="$year/src"
-cd "$year_src" || fatal "not configured for $year"
+cd "$year_src"|| fatal "repo not configured for $year"
 
 # find the next unsolved puzzle
+# this strategy allows for asynchronous completion of puzzles
 day=1
 printf -v py '%02d.py' $day
 while [ -e "$py" ]; do
@@ -31,15 +35,19 @@ if [ "$day" -gt "$num_days_of_aoc" ]; then
 fi
 printf -v txt '%02d.txt' $day
 
-curl "https://adventofcode.com/$year/day/$day/input" \
-    -X "GET" \
-    -H "Cookie: session=$session_cookie" > "$txt"
-if [[ ! -f "$txt" ]]; then
-    fatal "failed to curl input"
+if [[ -f "../input/$txt" ]]; then
+    info "found existing input $txt, skipping GET"
+else
+    curl "https://adventofcode.com/$year/day/$day/input" \
+        -X "GET" \
+        -H "Cookie: session=$session_cookie" \
+        -H "User-Agent: $user_agent" >> "$txt"
+    mv "$txt" "../input/$txt"
+    info "generated $txt"
 fi
 
-if mv "$txt" "../input/" && cp "template.py" "$py"; then
-    info "generated $py and $txt"
+if cp "template.py" "$py"; then
+    info "generated $py"
 else
-    fatal "something happened while generating $py and $txt"
+    fatal "template not found"
 fi
