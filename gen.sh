@@ -3,7 +3,6 @@
 
 set -euo pipefail
 num_days_of_aoc=25
-template="template.py"
 
 log_info () {
     echo "[INFO] $1"
@@ -20,7 +19,11 @@ fi
 if [[ -n "$user_agent" ]]; then
     log_info "user_agent found"
 fi
+if [[ -n "$src_type" ]]; then
+    log_info "src_type found"
+fi
 
+template="template.$src_type"
 year=$(date +%Y)
 year_src="$year/src"
 cd "$year_src"
@@ -32,9 +35,9 @@ fi
 # find the next unsolved puzzle
 # this strategy allows for asynchronous completion of puzzles
 day=1
-printf -v py '%02d.py' $day
-while [ -e "$py" ]; do
-    printf -v py '%02d.py' "$(( ++day ))"
+printf -v solution "%02d.$src_type" $day
+while [ -e "$solution" ]; do
+    printf -v solution "%02d.$src_type" "$(( ++day ))"
 done
 if [[ "$day" -gt "$num_days_of_aoc" ]]; then
     log_fatal "day $day > the number of aoc days $num_days_of_aoc"
@@ -52,6 +55,6 @@ else
     log_info "generated $txt"
 fi
 
-cp "$template" "$py"
-log_info "generated $py"
+cp "$template" "$solution"
+log_info "generated $solution"
 log_info "SUCCESS"

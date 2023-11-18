@@ -1,4 +1,5 @@
 # set the parameters and uncomment the lines below
 #
+# src_type="py"
 # session_cookie="<REPLACE_WITH_SESSION_COOKIE>"
 # user_agent="<REPLACE_WITH_CONTACT_INFO>"
