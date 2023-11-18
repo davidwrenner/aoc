@@ -1,27 +1,33 @@
 #!/bin/bash
 # generate input and src files for the next unsolved day
 
+set -euo pipefail
 num_days_of_aoc=25
+template="template.py"
 
-info () {
+log_info () {
     echo "[INFO] $1"
 }
-fatal () {
+log_fatal () {
     echo "[FATAL] $1"
     exit 1
 }
 
 source "config"
-if [[ -z "$session_cookie" ]]; then
-    fatal "session_cookie not set"
+if [[ -n "$session_cookie" ]]; then
+    log_info "session_cookie found"
 fi
-if [[ -z "$user_agent" ]]; then
-    fatal "user_agent not set"
+if [[ -n "$user_agent" ]]; then
+    log_info "user_agent found"
 fi
 
 year=$(date +%Y)
 year_src="$year/src"
-cd "$year_src" || fatal "repo not configured for $year"
+cd "$year_src"
+
+if [[ -f "$template" ]]; then
+    log_info "$template found"
+fi
 
 # find the next unsolved puzzle
 # this strategy allows for asynchronous completion of puzzles
@@ -30,24 +36,22 @@ printf -v py '%02d.py' $day
 while [ -e "$py" ]; do
     printf -v py '%02d.py' "$(( ++day ))"
 done
-if [ "$day" -gt "$num_days_of_aoc" ]; then
-    fatal "day $day > the number of aoc days $num_days_of_aoc"
+if [[ "$day" -gt "$num_days_of_aoc" ]]; then
+    log_fatal "day $day > the number of aoc days $num_days_of_aoc"
 fi
 printf -v txt '%02d.txt' $day
 
 if [[ -f "../input/$txt" ]]; then
-    info "found existing input $txt, skipping GET"
+    log_info "cached input $txt found"
 else
     curl "https://adventofcode.com/$year/day/$day/input" \
         -X "GET" \
         -H "Cookie: session=$session_cookie" \
         -H "User-Agent: $user_agent" >> "$txt"
     mv "$txt" "../input/$txt"
-    info "generated $txt"
+    log_info "generated $txt"
 fi
 
-if cp "template.py" "$py"; then
-    info "generated $py"
-else
-    fatal "template not found"
-fi
+cp "$template" "$py"
+log_info "generated $py"
+log_info "SUCCESS"
