@@ -6,7 +6,7 @@ import numpy as np
 import re
 
 ans = None
-input_path = "../input/" + __file__.replace('py', 'txt') if "-t" not in sys.argv else "testcase.txt"
+input_path = "../input/" + (__file__.replace('py', 'txt') if "-t" not in sys.argv else "testcase.txt")
 
 with open(input_path, "r") as f:
     input = [line.rstrip() for line in f]
