@@ -15,7 +15,7 @@ with open(input_path, "r") as f:
 
 # part a
 
-print(datetime.now(), "\nAnswer A:", ans)
+print("Answer A:", ans)
 timestamp_a = datetime.now()
 
 # part b
