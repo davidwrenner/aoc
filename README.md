@@ -1,8 +1,11 @@
 # aoc
 My solutions to [Advent of Code](https://adventofcode.com).
 
-### Automatic file generation
-Parameters in `config` must be set to run `gen.sh`. This script looks for existing solution files and will generate input and solution files for the earliest day in the current year without a solution file based on a predefined template. This allows for puzzles to be completed in sequence the day they unlock or asynchronously thereafter. To use for a different year, ensure the repo is setup with the minimum structure below.
+### Configuration for automatic file generation
+- Set the parameters in `config`
+- Run `gen.sh`. This script generates a new solution file for the 'next day' by copying a template file, and downloads the unique puzzle input to a corresponding input file
+  - The 'next day' is defined as the earliest, 1-indexed day in [01, 25] for which there is not already a solution file
+- Each year must be configured with the minimum skeleton below to use `gen.sh`
 ```
 aoc/
 ├─ <year>/
@@ -13,4 +16,4 @@ aoc/
 ├─ config
 ├─ gen.sh
 ```
-This script follows the automation [guidelines](https://www.reddit.com/r/adventofcode/wiki/faqs/automation/). Note that input is cached and only downloaded when not found locally.
+*This script follows the automation [guidelines](https://www.reddit.com/r/adventofcode/wiki/faqs/automation/). Input is cached and only downloaded when not found locally.*

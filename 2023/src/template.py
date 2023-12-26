@@ -6,7 +6,7 @@ import numpy as np
 import re
 from datetime import datetime
 
-print("Run started at", datetime.now())
+timestamp_0 = datetime.now()
 ans = None
 input_path = "../input/" + (__file__.replace('py', 'txt') if "-t" not in sys.argv else "testcase.txt")
 
@@ -25,5 +25,6 @@ timestamp_b = datetime.now()
 
 sp.run("pbcopy", input=str(ans), text=True)
 
+print(timestamp_0)
 print(timestamp_a)
 print(timestamp_b)
