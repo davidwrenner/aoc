@@ -1,7 +1,8 @@
 # aoc
 My solutions to [Advent of Code](https://adventofcode.com).
 
-### Configuration for automatic file generation
+### Setup for automatic file generation
+- Make a copy of `config_template` as `config`
 - Set the parameters in `config`
 - Run `gen.sh`. This script generates a new solution file for the 'next day' by copying a template file, and downloads the unique puzzle input to a corresponding input file
   - The 'next day' is defined as the earliest, 1-indexed day in [01, 25] for which there is not already a solution file
