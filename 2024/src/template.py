@@ -26,6 +26,4 @@ t_b = dt.now()
 
 sp.run("pbcopy", input=str(ans), text=True)
 
-print(t_0)
-print(t_a)
-print(t_b)
+print(t_0, t_a, t_b, sep="\n")
