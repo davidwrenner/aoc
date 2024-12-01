@@ -16,27 +16,17 @@ with open(fp, "r") as f:
     input = [line.rstrip() for line in f]
 
 # part a
-sum = 0
-
 left = sorted([int(line.split()[0]) for line in input])
 right = sorted([int(line.split()[1]) for line in input])
 
-for l, r in zip(left, right):
-    sum += abs(l - r)
-
-ans = sum
+ans = sum([abs(l-r) for l, r in zip(left, right)])
 print("Answer A:", ans)
 t_a = dt.now()
 
 # part b
-sum = 0
-
 counts = Counter(right)
 
-for l in left:
-    sum += l * (counts[l] if l in counts else 0)
-
-ans = sum
+ans = sum([l * (counts[l] if l in counts else 0) for l in left])
 print("Answer B:", ans)
 t_b = dt.now()
 
